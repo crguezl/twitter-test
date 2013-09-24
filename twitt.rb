@@ -4,14 +4,15 @@ require './configure'
 screen_name = ARGV[0] || 'timoreilly'
 a_user = Twitter.user(screen_name)
 
-puts "Username   : #{a_user.screen_name}"
-puts "Name       : #{a_user.name}"
-puts "Followers  : #{a_user.followers_count}"
-puts "Friends    : #{a_user.friends_count}"
-puts "Location   : #{a_user.location}"
-puts "URL        : #{a_user.url}" if a_user.url
-puts "Verified   : #{a_user.verified}"
-puts
+puts <<"EOS"
+Username   : #{a_user.screen_name}
+Name       : #{a_user.name}
+Followers  : #{a_user.followers_count}
+Friends    : #{a_user.friends_count}
+Location   : #{a_user.location}
+URL        : #{a_user.url ? a_user.url : ""} 
+Verified   : #{a_user.verified}
+EOS
 
 tweet = Twitter.user_timeline(screen_name).first
 
