@@ -8,6 +8,6 @@ See:
   *   http://www.vogella.com/articles/Git/article.html
 
 Once you have registered your application in twitter fill 
-configure.rb.template with your Oauth data
-and rename it to configure.rb
+`configure.rb.template` with your [Oauth](http://blog.varonis.com/introduction-to-oauth/) data
+and rename it to `configure.rb`
 
