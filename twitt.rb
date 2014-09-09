@@ -2,7 +2,7 @@ require 'twitter'
 require './configure'
 
 screen_name = ARGV[0] || 'timoreilly'
-a_user = Twitter.user(screen_name)
+a_user = client.user(screen_name)
 
 puts <<"EOS"
 Username   : #{a_user.screen_name}
@@ -14,7 +14,7 @@ URL        : #{a_user.url ? a_user.url : ""}
 Verified   : #{a_user.verified}
 EOS
 
-tweet = Twitter.user_timeline(screen_name).first
+tweet = client.user_timeline(screen_name).first
 
 if tweet
   puts "Tweet text : #{tweet.text }"
