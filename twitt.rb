@@ -2,6 +2,8 @@ require 'twitter'
 require './configure'
 
 screen_name = ARGV[0] || 'timoreilly'
+
+client = my_twitter_client()
 a_user = client.user(screen_name)
 
 puts <<"EOS"
